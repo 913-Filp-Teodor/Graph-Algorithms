@@ -17,8 +17,7 @@ class DirectedGraph {
         DirectedGraph();
         ~DirectedGraph();
         void insertVertex(int);
-        void insertEdge(int, int);
-        virtual void loadFile(std::ifstream&);
+        virtual void insertEdge(int, int);
         void setup(int);
         void clearMap(std::map<int, std::vector<int>*>);
         bool existsEdge(int, int);
@@ -27,12 +26,13 @@ class DirectedGraph {
         std::vector<int>::iterator getInboundEdgesEnd(int);
         std::vector<int>::iterator getOutboundEdgesBegin(int);
         std::vector<int>::iterator getOutboundEdgesEnd(int);
+        std::vector<int> getInboundEdges(int);
+        std::vector<int> getOutboundEdges(int);
         virtual void removeEdge(int, int);
         virtual void removeVertex(int);
         bool isVertex(int);
         int getInDegree(int);
         int getOutDegree(int);
-        virtual DirectedGraph copy(DirectedGraph&);
 };
 
 

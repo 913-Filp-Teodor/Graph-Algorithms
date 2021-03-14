@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Volumes/D/Data/Graph_Algorithms/A1
+"F:\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\repos\GA\A1
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Volumes/D/Data/Graph_Algorithms/A1/cmake-build-debug
+-- Build files have been written to: D:/repos/GA/A1/cmake-build-debug

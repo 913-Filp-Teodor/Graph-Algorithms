@@ -4,10 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Volumes/D/Data/Graph_Algorithms/A1/DirectedGraph.cpp" "/Volumes/D/Data/Graph_Algorithms/A1/cmake-build-debug/CMakeFiles/A1.dir/DirectedGraph.cpp.o"
-  "/Volumes/D/Data/Graph_Algorithms/A1/main.cpp" "/Volumes/D/Data/Graph_Algorithms/A1/cmake-build-debug/CMakeFiles/A1.dir/main.cpp.o"
+  "D:/repos/GA/A1/DirectedGraph.cpp" "D:/repos/GA/A1/cmake-build-debug/CMakeFiles/A1.dir/DirectedGraph.cpp.obj"
+  "D:/repos/GA/A1/GraphUtils.cpp" "D:/repos/GA/A1/cmake-build-debug/CMakeFiles/A1.dir/GraphUtils.cpp.obj"
+  "D:/repos/GA/A1/WDirectedGraph.cpp" "D:/repos/GA/A1/cmake-build-debug/CMakeFiles/A1.dir/WDirectedGraph.cpp.obj"
+  "D:/repos/GA/A1/main.cpp" "D:/repos/GA/A1/cmake-build-debug/CMakeFiles/A1.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

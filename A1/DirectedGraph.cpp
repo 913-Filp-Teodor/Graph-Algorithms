@@ -4,6 +4,9 @@
 
 #include "DirectedGraph.h"
 #include <iostream>
+#include "GraphUtils.h"
+
+using namespace GraphUtils;
 
 DirectedGraph::DirectedGraph() {
 }
@@ -14,7 +17,7 @@ DirectedGraph::~DirectedGraph() {
 }
 
 void DirectedGraph::clearMap(std::map<int, std::vector<int>*> map) {
-    while (map.size() > 0) {
+    while (!map.empty()) {
         auto iterator = map.begin();
         delete iterator->second;
         map.erase(iterator);
@@ -44,19 +47,6 @@ void DirectedGraph::setup(int vertices) {
     }
 }
 
-void DirectedGraph::loadFile(std::ifstream &read) {
-    int vertices, edges;
-    read >> vertices >> edges;
-
-    this->setup(vertices);
-
-    for (auto i = 0; i < edges; i++) {
-        int to, from;
-        read >> to >> from;
-        this->insertEdge(to, from);
-    }
-}
-
 std::vector<int> DirectedGraph::getVertices() {
     std::vector<int> vertices;
 
@@ -68,6 +58,10 @@ std::vector<int> DirectedGraph::getVertices() {
 }
 
 bool DirectedGraph::existsEdge(int source, int destination) {
+    if (!this->isVertex(source) || !this->isVertex(destination)) {
+        throw std::runtime_error("Vertex does not exist");
+    }
+
     if (!this->to[source]) {
         return false;
     }
@@ -87,7 +81,7 @@ bool DirectedGraph::isVertex(int candidate) {
 
 int DirectedGraph::getInDegree(int dest) {
     if (!this->isVertex(dest)) {
-        return 0;
+        throw std::runtime_error("Vertex does not exist");
     } else {
         return this->from[dest]->size();
     }
@@ -95,7 +89,7 @@ int DirectedGraph::getInDegree(int dest) {
 
 int DirectedGraph::getOutDegree(int src) {
     if (!this->isVertex(src)) {
-        return 0;
+        throw std::runtime_error("Vertex does not exist");
     } else {
         return this->to[src]->size();
     }
@@ -137,12 +131,8 @@ void DirectedGraph::removeEdge(int src, int dest) {
     if (!this->isVertex(src) || !this->isVertex(dest)) {
         throw std::runtime_error("Vertex not found");
     } else {
-        std::vector<int>* to = this->to[src];
-        std::vector<int>* from = this->from[dest];
-        const auto srcIt = std::find(from->begin(), from->end(), src);
-        const auto destIt = std::find(to->begin(), to->end(), dest);
-        from->erase(srcIt);
-        to->erase(destIt);
+        removeFromList(this->to[src], dest);
+        removeFromList(this->from[dest], src);
     }
 }
 
@@ -157,6 +147,18 @@ void DirectedGraph::removeVertex(int candidate) {
     this->from.erase(candidate);
 }
 
-DirectedGraph DirectedGraph::copy(DirectedGraph &old) {
+std::vector<int> DirectedGraph::getInboundEdges(int dest) {
+    if (!this->isVertex(dest)) {
+        throw std::runtime_error("Vertex not found");
+    }
 
+    return *this->from[dest];
+}
+
+std::vector<int> DirectedGraph::getOutboundEdges(int src) {
+    if (!this->isVertex(src)) {
+        throw std::runtime_error("Vertex not found");
+    }
+
+    return *this->to[src];
 }
