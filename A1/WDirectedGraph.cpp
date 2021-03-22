@@ -2,6 +2,7 @@
 // Created by Tudor Filp on 3/14/2021.
 //
 #include "WDirectedGraph.h"
+#include <iostream>
 
 WDirectedGraph::WDirectedGraph() {
 
@@ -51,6 +52,7 @@ void WDirectedGraph::removeVertex(int v) {
 int WDirectedGraph::getEdgeCost(int src, int dest) {
     auto it = this->weights.find(std::pair<int, int>(src, dest));
     if (it == this->weights.end()) {
+        std::cout << src << " " << dest << "\n";
         throw std::runtime_error("Edge does not exist");
     }
 

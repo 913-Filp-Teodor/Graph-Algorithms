@@ -51,7 +51,9 @@ std::vector<int> DirectedGraph::getVertices() {
     std::vector<int> vertices;
 
     for (auto it = this->to.begin(); it != this->to.end(); ++it) {
-        vertices.push_back(it->first);
+        if (isVertex(it->first)) {
+            vertices.push_back(it->first);
+        }
     }
 
     return vertices;
@@ -76,7 +78,7 @@ bool DirectedGraph::existsEdge(int source, int destination) {
 }
 
 bool DirectedGraph::isVertex(int candidate) {
-    return this->to[candidate] != NULL;
+    return this->to[candidate] != nullptr;
 }
 
 int DirectedGraph::getInDegree(int dest) {
@@ -130,6 +132,8 @@ std::vector<int>::iterator DirectedGraph::getOutboundEdgesEnd(int src) {
 void DirectedGraph::removeEdge(int src, int dest) {
     if (!this->isVertex(src) || !this->isVertex(dest)) {
         throw std::runtime_error("Vertex not found");
+    } else if (!this->existsEdge(src, dest)) {
+        throw std::runtime_error("Edge not found");
     } else {
         removeFromList(this->to[src], dest);
         removeFromList(this->from[dest], src);
@@ -139,6 +143,14 @@ void DirectedGraph::removeEdge(int src, int dest) {
 void DirectedGraph::removeVertex(int candidate) {
     if (!this->isVertex(candidate)) {
         throw std::runtime_error("Vertex not found");
+    }
+
+    for (auto outbound: *(this->to[candidate])) {
+        GraphUtils::removeFromList(this->from[outbound], candidate);
+    }
+
+    for (auto inbound: *(this->from[candidate])) {
+        GraphUtils::removeFromList(this->to[inbound], candidate);
     }
 
     delete this->to[candidate];
