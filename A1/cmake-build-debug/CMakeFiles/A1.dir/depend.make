@@ -4,14 +4,26 @@
 CMakeFiles\A1.dir\DirectedGraph.cpp.obj: ..\DirectedGraph.cpp
 CMakeFiles\A1.dir\DirectedGraph.cpp.obj: ..\DirectedGraph.h
 CMakeFiles\A1.dir\DirectedGraph.cpp.obj: ..\GraphUtils.h
+CMakeFiles\A1.dir\DirectedGraph.cpp.obj: ..\WDirectedGraph.h
+CMakeFiles\A1.dir\DirectedGraph.cpp.obj: ..\WUndirectedGraph.h
 
+CMakeFiles\A1.dir\GraphUtils.cpp.obj: ..\DirectedGraph.h
 CMakeFiles\A1.dir\GraphUtils.cpp.obj: ..\GraphUtils.cpp
+CMakeFiles\A1.dir\GraphUtils.cpp.obj: ..\WDirectedGraph.h
+CMakeFiles\A1.dir\GraphUtils.cpp.obj: ..\WUndirectedGraph.h
 
 CMakeFiles\A1.dir\WDirectedGraph.cpp.obj: ..\DirectedGraph.h
 CMakeFiles\A1.dir\WDirectedGraph.cpp.obj: ..\WDirectedGraph.cpp
 CMakeFiles\A1.dir\WDirectedGraph.cpp.obj: ..\WDirectedGraph.h
 
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: ..\DirectedGraph.h
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: ..\GraphUtils.h
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: ..\WDirectedGraph.h
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: ..\WUndirectedGraph.cpp
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: ..\WUndirectedGraph.h
+
 CMakeFiles\A1.dir\main.cpp.obj: ..\DirectedGraph.h
 CMakeFiles\A1.dir\main.cpp.obj: ..\WDirectedGraph.h
+CMakeFiles\A1.dir\main.cpp.obj: ..\WUndirectedGraph.h
 CMakeFiles\A1.dir\main.cpp.obj: ..\main.cpp
 

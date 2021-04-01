@@ -7,9 +7,8 @@
 #include <chrono>
 
 #include "WDirectedgraph.h"
-#include "WUndirectedGraph.h"
 
-WUndirectedGraph *graph;
+WDirectedGraph *graph;
 
 void printMenu() {
   std::string menu = "\n\n"
@@ -29,8 +28,7 @@ void printMenu() {
                      "14. Save graph \n"
                      "15. Load graph \n"
                      "16. Generate graph \n"
-                     "17. Get connected components \n"
-                     "18. Exit \n";
+                     "17. Exit \n";
 
   std::cout << menu;
 };
@@ -183,7 +181,7 @@ void saveGraph() {
 
 void loadGraph() {
     delete graph;
-    graph = new WUndirectedGraph();
+    graph = new WDirectedGraph();
 
     std::string fileName;
     std::cout << "Enter the name of the file containing the desired graph: ";
@@ -222,11 +220,11 @@ void generateGraph() {
     int v, e;
     std::cout << "Enter the vertices number and edges number: ";
     std::cin >> v >> e;
-    if (e > v*v) {
-        throw std::runtime_error("Cannot generate required graph... the number of edges cannot be bigger than vertices*vertices\n");
+    if (e > v*(v-1)) {
+        throw std::runtime_error("Cannot generate required graph... the number of edges cannot be bigger than vertices*(vertices-1)\n");
     }
     delete graph;
-    graph = new WUndirectedGraph();
+    graph = new WDirectedGraph();
 
     for (int i = 0; i < v; i++) {
         graph->insertVertex(i);
@@ -236,6 +234,9 @@ void generateGraph() {
 
     for (int i = 0; i < v; i++) {
         for (int j = 0; j < v; j++) {
+            if (i == j) {
+                continue;
+            }
             availableEdges.push_back(std::pair<int, int>(i, j));
             if (availableEdges.size() >= e) {
                 break;
@@ -252,31 +253,6 @@ void generateGraph() {
         std::pair<int, int> p = availableEdges[i];
         int cost = rand() % 100 + 1;
         graph->insertEdge(p.first, p.second, cost);
-    }
-}
-
-void getConnectedComponents() {
-
-    std::vector<WUndirectedGraph*> components;
-
-    for(auto component: graph->getConnectedComponents()) {
-        int source = component[0];
-        WUndirectedGraph *graph1 = new WUndirectedGraph();
-        graph1->insertVertex(source);
-        for (int i=1; i<component.size(); i++) {
-            graph1->insertVertex(component[i]);
-            graph1->insertEdge(source, component[i]);
-        }
-        components.push_back(graph1);
-    }
-
-    for (int i=0; i<components.size(); i++) {
-        std::cout << "Graph#" + std::to_string(i) + ": \n";
-        std::vector<int> vertices = components[i]->getVertices();
-        for (auto v: vertices) {
-            std::cout << v << " ";
-        }
-        std::cout << std::endl;
     }
 }
 
@@ -298,8 +274,7 @@ void executeCommand(int option) {
         case 14: return saveGraph();
         case 15: return loadGraph();
         case 16: return generateGraph();
-        case 17: return getConnectedComponents();
-        case 18: delete graph; exit(0);
+        case 17: delete graph; exit(0);
         default: throw std::runtime_error("Invalid command :(");
     }
 }
@@ -342,7 +317,7 @@ void loadInitialFile(std::ifstream &read) {
 }
 
 int main() {
-    graph = new WUndirectedGraph();
+    graph = new WDirectedGraph();
 
     std::ifstream read;
     read.open("../" + getFileName());

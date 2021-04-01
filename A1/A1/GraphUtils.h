@@ -5,13 +5,9 @@
 #ifndef A1_GRAPHUTILS_H
 #define A1_GRAPHUTILS_H
 #include "GraphUtils.h"
-#include "WUndirectedGraph.h"
-#include <vector>
-#include <set>
 
 namespace GraphUtils {
     void removeFromList(std::vector<int>*, int);
-    void getConnectedComponents(WUndirectedGraph&, int, std::vector<int>&, std::set<int>&);
 }
 
 #endif //A1_GRAPHUTILS_H

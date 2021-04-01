@@ -1,7 +1,9 @@
 //
 // Created by Teodor Filp on 22/02/2021.
 //
+
 #include "DirectedGraph.h"
+#include <iostream>
 #include "GraphUtils.h"
 
 using namespace GraphUtils;
@@ -49,9 +51,7 @@ std::vector<int> DirectedGraph::getVertices() {
     std::vector<int> vertices;
 
     for (auto it = this->to.begin(); it != this->to.end(); ++it) {
-        if (isVertex(it->first)) {
-            vertices.push_back(it->first);
-        }
+        vertices.push_back(it->first);
     }
 
     return vertices;
@@ -76,7 +76,7 @@ bool DirectedGraph::existsEdge(int source, int destination) {
 }
 
 bool DirectedGraph::isVertex(int candidate) {
-    return this->to[candidate] != nullptr;
+    return this->to[candidate] != NULL;
 }
 
 int DirectedGraph::getInDegree(int dest) {

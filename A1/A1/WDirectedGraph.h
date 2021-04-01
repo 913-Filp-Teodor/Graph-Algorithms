@@ -17,7 +17,7 @@ class WDirectedGraph: public DirectedGraph {
     public:
         WDirectedGraph();
         ~WDirectedGraph();
-        virtual void insertEdge(int, int, int);
+        void insertEdge(int, int, int);
         virtual void removeVertex(int) override;
         virtual void removeEdge(int, int) override;
         int getEdgeCost(int, int);

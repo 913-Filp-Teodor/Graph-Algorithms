@@ -98,6 +98,12 @@
 		<Unit filename="D:/repos/GA/A1/WDirectedGraph.h">
 			<Option target="A1"/>
 		</Unit>
+		<Unit filename="D:/repos/GA/A1/WUndirectedGraph.cpp">
+			<Option target="A1"/>
+		</Unit>
+		<Unit filename="D:/repos/GA/A1/WUndirectedGraph.h">
+			<Option target="A1"/>
+		</Unit>
 		<Unit filename="D:/repos/GA/A1/main.cpp">
 			<Option target="A1"/>
 		</Unit>

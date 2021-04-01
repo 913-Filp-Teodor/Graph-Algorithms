@@ -22,6 +22,10 @@ fstream
 DirectedGraph.h
 D:/repos/GA/A1/DirectedGraph.h
 
+D:/repos/GA/A1/WUndirectedGraph.h
+WDirectedGraph.h
+D:/repos/GA/A1/WDirectedGraph.h
+
 D:/repos/GA/A1/main.cpp
 iostream
 -
@@ -39,4 +43,6 @@ chrono
 -
 WDirectedgraph.h
 D:/repos/GA/A1/WDirectedGraph.h
+WUndirectedGraph.h
+D:/repos/GA/A1/WUndirectedGraph.h
 

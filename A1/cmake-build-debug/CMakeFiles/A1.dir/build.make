@@ -137,12 +137,32 @@ CMakeFiles\A1.dir\WDirectedGraph.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\A1.dir\WDirectedGraph.cpp.s /c D:\repos\GA\A1\WDirectedGraph.cpp
 <<
 
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: CMakeFiles\A1.dir\flags.make
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj: ..\WUndirectedGraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\repos\GA\A1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/A1.dir/WUndirectedGraph.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2017\BUILDT~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\A1.dir\WUndirectedGraph.cpp.obj /FdCMakeFiles\A1.dir\ /FS -c D:\repos\GA\A1\WUndirectedGraph.cpp
+<<
+
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1.dir/WUndirectedGraph.cpp.i"
+	C:\PROGRA~2\MICROS~1\2017\BUILDT~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\A1.dir\WUndirectedGraph.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\repos\GA\A1\WUndirectedGraph.cpp
+<<
+
+CMakeFiles\A1.dir\WUndirectedGraph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1.dir/WUndirectedGraph.cpp.s"
+	C:\PROGRA~2\MICROS~1\2017\BUILDT~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\A1.dir\WUndirectedGraph.cpp.s /c D:\repos\GA\A1\WUndirectedGraph.cpp
+<<
+
 # Object files for target A1
 A1_OBJECTS = \
 "CMakeFiles\A1.dir\main.cpp.obj" \
 "CMakeFiles\A1.dir\DirectedGraph.cpp.obj" \
 "CMakeFiles\A1.dir\GraphUtils.cpp.obj" \
-"CMakeFiles\A1.dir\WDirectedGraph.cpp.obj"
+"CMakeFiles\A1.dir\WDirectedGraph.cpp.obj" \
+"CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj"
 
 # External object files for target A1
 A1_EXTERNAL_OBJECTS =
@@ -151,9 +171,10 @@ A1.exe: CMakeFiles\A1.dir\main.cpp.obj
 A1.exe: CMakeFiles\A1.dir\DirectedGraph.cpp.obj
 A1.exe: CMakeFiles\A1.dir\GraphUtils.cpp.obj
 A1.exe: CMakeFiles\A1.dir\WDirectedGraph.cpp.obj
+A1.exe: CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj
 A1.exe: CMakeFiles\A1.dir\build.make
 A1.exe: CMakeFiles\A1.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\repos\GA\A1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable A1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\repos\GA\A1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable A1.exe"
 	"F:\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\A1.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100177~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100177~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2017\BUILDT~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\A1.dir\objects1.rsp @<<
  /out:A1.exe /implib:A1.lib /pdb:D:\repos\GA\A1\cmake-build-debug\A1.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

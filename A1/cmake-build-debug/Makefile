@@ -208,6 +208,33 @@ WDirectedGraph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\A1.dir\WDirectedGraph.cpp.s
 .PHONY : WDirectedGraph.cpp.s
 
+WUndirectedGraph.obj: WUndirectedGraph.cpp.obj
+
+.PHONY : WUndirectedGraph.obj
+
+# target to build an object file
+WUndirectedGraph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\A1.dir\WUndirectedGraph.cpp.obj
+.PHONY : WUndirectedGraph.cpp.obj
+
+WUndirectedGraph.i: WUndirectedGraph.cpp.i
+
+.PHONY : WUndirectedGraph.i
+
+# target to preprocess a source file
+WUndirectedGraph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\A1.dir\WUndirectedGraph.cpp.i
+.PHONY : WUndirectedGraph.cpp.i
+
+WUndirectedGraph.s: WUndirectedGraph.cpp.s
+
+.PHONY : WUndirectedGraph.s
+
+# target to generate assembly for a file
+WUndirectedGraph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\A1.dir\WUndirectedGraph.cpp.s
+.PHONY : WUndirectedGraph.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -253,6 +280,9 @@ help:
 	@echo ... WDirectedGraph.obj
 	@echo ... WDirectedGraph.i
 	@echo ... WDirectedGraph.s
+	@echo ... WUndirectedGraph.obj
+	@echo ... WUndirectedGraph.i
+	@echo ... WUndirectedGraph.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

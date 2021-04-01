@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/A1.dir/DirectedGraph.cpp.obj"
   "CMakeFiles/A1.dir/GraphUtils.cpp.obj"
   "CMakeFiles/A1.dir/WDirectedGraph.cpp.obj"
+  "CMakeFiles/A1.dir/WUndirectedGraph.cpp.obj"
   "CMakeFiles/A1.dir/main.cpp.obj"
 )
 
